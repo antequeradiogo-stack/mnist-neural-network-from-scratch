@@ -1,0 +1,19 @@
+{
+  "checkpoint": "models/mnist_standard_normal_baseline.npz",
+  "checkpoint_sha256": "8fbb0e27d62c4b6d6aa2b3a219284a922111fa8a991fd3e91db27356f0e32dbc",
+  "architecture": [784, 30, 10],
+  "initialization": "standard_normal",
+  "activation": "sigmoid",
+  "cost": "quadratic",
+  "optimizer": "mini_batch_sgd",
+  "training_examples": 50000,
+  "validation_examples": 10000,
+  "epochs": 30,
+  "mini_batch_size": 10,
+  "learning_rate": 3.0,
+  "seed": 2026,
+  "validation_correct": 8629,
+  "validation_accuracy": 0.8629,
+  "training_cost_epoch_1": 0.12046751153719662,
+  "training_cost_epoch_30": 0.07012568322880959
+}

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 390" role="img" aria-labelledby="title description">
+  <title id="title">MNIST neural network architecture</title>
+  <desc id="description">A schematic of a fully connected network with 784 input pixels, 30 sigmoid hidden neurons, and 10 sigmoid output neurons; only representative connections are drawn.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#68758a"/>
+    </marker>
+    <style>
+      .bg { fill: #f7f9fc; }
+      .layer { fill: #e8efff; stroke: #4666a8; stroke-width: 2; }
+      .node { fill: #fff; stroke: #4666a8; stroke-width: 2; }
+      .edge { stroke: #98a5b8; stroke-width: 1.4; marker-end: url(#arrow); }
+      .heading { font: 700 24px system-ui, sans-serif; fill: #17253c; }
+      .label { font: 600 19px system-ui, sans-serif; fill: #26364e; }
+      .small { font: 15px system-ui, sans-serif; fill: #526176; }
+    </style>
+  </defs>
+  <rect class="bg" width="900" height="390" rx="18"/>
+  <text class="heading" x="450" y="42" text-anchor="middle">Fully connected MNIST classifier</text>
+  <text class="small" x="450" y="65" text-anchor="middle">Representative edges shown; every unit connects to every unit in the next layer</text>
+  <g opacity="0.78">
+    <path class="edge" d="M205 118 L344 145"/><path class="edge" d="M205 118 L344 187"/><path class="edge" d="M205 118 L344 229"/>
+    <path class="edge" d="M205 272 L344 145"/><path class="edge" d="M205 272 L344 187"/><path class="edge" d="M205 272 L344 229"/>
+    <path class="edge" d="M474 145 L634 118"/><path class="edge" d="M474 145 L634 195"/><path class="edge" d="M474 145 L634 272"/>
+    <path class="edge" d="M474 229 L634 118"/><path class="edge" d="M474 229 L634 195"/><path class="edge" d="M474 229 L634 272"/>
+  </g>
+  <rect class="layer" x="95" y="82" width="140" height="230" rx="18"/>
+  <circle class="node" cx="165" cy="118" r="20"/><circle class="node" cx="165" cy="195" r="20"/><circle class="node" cx="165" cy="272" r="20"/>
+  <text class="small" x="165" y="199" text-anchor="middle">⋮</text>
+  <rect class="layer" x="330" y="82" width="158" height="230" rx="18"/>
+  <circle class="node" cx="410" cy="145" r="20"/><circle class="node" cx="410" cy="187" r="20"/><circle class="node" cx="410" cy="229" r="20"/>
+  <text class="small" x="410" y="192" text-anchor="middle">⋮</text>
+  <rect class="layer" x="620" y="82" width="170" height="230" rx="18"/>
+  <circle class="node" cx="705" cy="118" r="15"/><circle class="node" cx="705" cy="157" r="15"/><circle class="node" cx="705" cy="195" r="15"/><circle class="node" cx="705" cy="234" r="15"/><circle class="node" cx="705" cy="273" r="15"/>
+  <text class="small" x="705" y="200" text-anchor="middle">⋮</text>
+  <text class="label" x="165" y="345" text-anchor="middle">784 pixels</text>
+  <text class="label" x="410" y="345" text-anchor="middle">30 sigmoid units</text>
+  <text class="label" x="705" y="345" text-anchor="middle">10 digit scores</text>
+  <text class="small" x="165" y="369" text-anchor="middle">28 × 28 grayscale</text>
+  <text class="small" x="705" y="369" text-anchor="middle">indices 0–9</text>
+</svg>

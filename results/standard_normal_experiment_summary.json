@@ -1,0 +1,22 @@
+{
+  "architecture": [
+    784,
+    30,
+    10
+  ],
+  "training_examples": 50000,
+  "validation_examples": 10000,
+  "test_examples": 10000,
+  "epochs": 30,
+  "mini_batch_size": 10,
+  "learning_rate": 3.0,
+  "seed": 2026,
+  "training_seconds_including_epoch_metrics": 316.59084460005397,
+  "final_training_cost": 0.07012568322880959,
+  "final_validation_accuracy": 0.8629,
+  "validation_majority_digit": 7,
+  "validation_majority_baseline": 0.109,
+  "final_test_correct": 8623,
+  "final_test_accuracy": 0.8623,
+  "test_confusion_matrix_diagonal_sum": 8623
+}

@@ -1,0 +1,22 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+build/
+dist/
+*.egg-info/
+
+# Downloaded MNIST pickle and local exploratory outputs.
+data/*
+!data/.gitkeep
+outputs/
+
+# Model archives are generally generated artifacts; publish only the two
+# small checkpoints documented in this project.
+*.npz
+!models/mnist_glorot_candidate.npz
+!models/mnist_standard_normal_baseline.npz

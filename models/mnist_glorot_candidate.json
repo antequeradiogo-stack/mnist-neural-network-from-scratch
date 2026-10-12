@@ -1,0 +1,21 @@
+{
+  "checkpoint": "models/mnist_glorot_candidate.npz",
+  "checkpoint_sha256": "2db2d28a02faf96d46d628f6c074324c096fdbb2073ec2f99a6c7f970c9bb80e",
+  "architecture": [784, 30, 10],
+  "initialization": "glorot_normal",
+  "bias_initialization": "zeros",
+  "activation": "sigmoid",
+  "cost": "quadratic",
+  "optimizer": "mini_batch_sgd",
+  "training_examples": 50000,
+  "validation_examples": 10000,
+  "epochs": 30,
+  "mini_batch_size": 10,
+  "learning_rate": 3.0,
+  "seed": 2026,
+  "validation_correct": 9620,
+  "validation_accuracy": 0.962,
+  "training_cost_epoch_1": 0.05106232881034845,
+  "training_cost_epoch_30": 0.016126944026291223,
+  "training_time_seconds": 315.5144999999902
+}
