@@ -81,7 +81,7 @@ The reports and integer confusion matrices are retained as CSV/JSON under `resul
 
 ## Setup
 
-Requires Python 3.10 or newer. Create an isolated environment and install the two runtime dependencies:
+Requires Python 3.10 or newer. Create an isolated environment and install the project and demo dependencies:
 
 ```powershell
 py -m venv .venv
@@ -112,6 +112,18 @@ python evaluate_candidate.py
 `train.py` trains using the command-line configuration (default: 50,000 training examples, 10,000 validation examples, 30 epochs, batch size 10, learning rate 3.0, seed 2026, Glorot-normal). Training and test evaluation happen when this command is explicitly run. New run artifacts default to `outputs/training_run/`, preserving the recorded artifacts. Use `--initialization standard_normal` to select the original initialization. `compare_initializations.py` reproduces the controlled comparison from the tracked baseline checkpoint and metrics; that command trains a new comparison model and takes several minutes.
 
 `evaluate_candidate.py` loads the committed candidate checkpoint, verifies its SHA-256 and recorded validation accuracy, and then evaluates the held-out test set. It does not train or tune. The data loader may download the ignored MNIST archive if it is absent. Test metrics are written under ignored `outputs/candidate_test_evaluation/`; tracked copies of the reports are under `results/`.
+
+## Interactive drawing demo
+
+Start the local Streamlit app from the repository root:
+
+```powershell
+streamlit run app.py
+```
+
+The app loads `models/mnist_glorot_candidate.npz` once and uses the existing NumPy `Network.feedforward()` implementation. It does not load or download MNIST, train the model, or call an external AI service. Draw a digit using a mouse or touchscreen, then select **Predict**; **Clear** resets the canvas. The displayed **95.82%** is the saved candidate's evaluation on the held-out MNIST test set, not an accuracy measure for visitor drawings.
+
+The project loader's MNIST images have dark corners/background and brighter digit pixels normalized to `[0, 1]`. The canvas therefore uses white ink on black. Preprocessing composites transparency over black, crops the non-background pixels, preserves aspect ratio while fitting the drawing inside a 20 × 20 region, places it on a 28 × 28 canvas, and shifts its intensity center toward the middle before flattening to `(784, 1)`. This approximates common MNIST centering, but it is not the original MNIST preprocessing pipeline: visitor handwriting, stroke width, drawing position, and antialiasing can differ.
 
 ## Checkpoints and artifacts
 
