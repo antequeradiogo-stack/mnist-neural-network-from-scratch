@@ -2,6 +2,12 @@
 
 A small, inspectable handwritten-digit classifier built with Python and NumPy. The project implements the classic 784–30–10 multilayer perceptron itself: parameter initialization, sigmoid forward propagation, quadratic cost, backpropagation, and mini-batch stochastic gradient descent. Michael Nielsen's *Neural Networks and Deep Learning* is the learning reference for this educational implementation; the project is not a framework wrapper.
 
+## Live Demo
+
+**[Try the Live Demo](https://mnist-neural-network-from-scratch.streamlit.app/)** — draw a handwritten digit and get a prediction from the saved Glorot-initialized neural network in your browser, without installing Python. The app uses this project's Python and NumPy implementation of the 784 → 30 → 10 network, including manually implemented forward propagation and backpropagation.
+
+The reported **95.82%** is accuracy on the held-out MNIST test set. It is not an accuracy score for visitor drawings.
+
 ## Problem and architecture
 
 MNIST contains 28 × 28 grayscale images of handwritten digits. The network flattens each image to 784 normalized inputs, computes through 30 hidden sigmoid units, and returns 10 output activations, one for each digit label 0–9. The highest output index is the predicted label. These sigmoid scores are not calibrated probabilities.
